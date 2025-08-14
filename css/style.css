@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Work_Sans_custom';
+    src: url('/Fonts/WorkSans-VariableFont_wght.ttf') format('truetype');
+}
+body {
+    font-family: 'Work_Sans_custom', sans-serif;
+    font-feature-settings: 'ss03';
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 2.5rem;
+    letter-spacing: -0.4px;
+}
+.outer_container{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 37.5rem;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0rem;
+  margin: 0rem;
+}
+a{
+  color: #000;
+  transition: color 0.4s ease, letter-spacing 0.3s ease;
+   text-decoration-thickness: 1px;
+}
+a:hover{
+ color: #787878;
+    letter-spacing: 0.2px; /* tiny modern shift */
+}
+#statusMsg {
+    color: #787878;
+    margin-left: 0.5rem; /* space between link and message */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* gentle fade */
+}
+#statusMsg.show {
+    opacity: 1;
+}
+.disabled{
+color: #787878;
+}
+
+
+/* Initial hidden state */
+.fade-in-top {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When active */
+.fade-in-top.show {
+  opacity: 1;
+    transform: none; /* removes stacking context after anim */
+  transform: translateY(0);
+}
+
+
+#tooltip-container {
+  position: fixed;              /* viewport coords; ignores scroll & parent transforms */
+  transform-origin: left top;
+  z-index: 999999;
+  background: #fff;
+  padding: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  pointer-events: none;
+
+  /* subtle entrance */
+  opacity: 0;
+  transform:  scale(0.98);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  visibility: hidden;           /* we’ll toggle this when measured */
+}
+#tooltip-container.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+}
+#tooltip-image {
+  max-width: 60rem;
+  display: block;
+}
+
+.sticky-container{
+      display: flex;
+    justify-content: flex-end;
+    /* height: 0px; */
+    position: sticky;
+    bottom: 1rem;
+}
+
+/* click to sroll to top */
+
+#scroll-top-btn {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+#scroll-top-btn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scroll-top-btn:hover {
+  background: #ECECEC;
+}
+
+
+
+.content{
+  max-width: 37.5rem;
+}
+
+.outer_container_inside{
+    display: flex;
+  flex-direction: column;
+  gap: 7.5rem;
+
+}
+
+.image-width{
+  width: -webkit-fill-available;
+}
