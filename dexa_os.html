@@ -1,0 +1,168 @@
+<head>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+<div id="scroll-container" class="outer_container_inside">
+<div><a href="#" id="go-back">← Back</a></div>
+<div>Dexa OS <span class="disabled">(Initial version)</span></div>
+<div>
+  <ul style="list-style-type: disc; margin-left: 1rem ;">
+    <li>Visual design</li>
+    <li>Icon design</li>
+    <li>Interaction design (coming soon)</li>
+  </ul>
+</div>
+
+<div class="content">
+  <p>
+    Designed to combat doom scrolling, this project promotes intentional device use to boost focus, well-being, and productivity.
+
+Each app is viewed as a “Block” in Dexa OS, similar to a widget. Users can keep a maximum of 7 blocks at a time—encouraging intentional and focused phone use.
+
+The below screenshots show apps simplified to essential features for a minimal, focused experience—like WhatsApp with only chats and calls, excluding Status and Channels, and Spotify with playback, library, and search, without the homepage to avoid infinite scrolling. 
+
+Social media apps are intentionally excluded from this OS to minimize distractions.
+
+  </p>
+</div>
+
+<div>
+  <img class="image-width" src="/Assets/Images/Dexa OS/1.png">
+</div>
+
+<div>
+  <div class="content">
+<p>Add a Block</p>
+  </div>
+ <div>
+  <img class="image-width" src="/Assets/Images/Dexa OS/2.png">
+</div>
+
+</div>
+
+
+<div>
+  <div class="content">
+<p>Ask Anything - Scenario 1</p>
+  </div>
+ <div>
+  <img class="image-width" src="/Assets/Images/Dexa OS/3.png">
+</div>
+
+</div>
+
+<div>
+  <div class="content">
+<p>Ask Anything - Scenario 2</p>
+  </div>
+ <div>
+  <img class="image-width" src="/Assets/Images/Dexa OS/4.png">
+</div>
+
+</div>
+
+<div>
+  <div class="content">
+<p>Settings page</p>
+  </div>
+ <div>
+  <img class="image-width" src="/Assets/Images/Dexa OS/5.png">
+</div>
+
+</div>
+
+<div>
+  <div class="content">
+<p>WhatsApp</p>
+  </div>
+ <div>
+  <img class="image-width" src="/Assets/Images/Dexa OS/6.png">
+</div>
+
+</div>
+
+<div>
+  <div class="content">
+<p>Navigate the OS Through Colors and Size</p>
+  </div>
+ <div>
+  <img class="image-width" src="/Assets/Images/Dexa OS/7.png">
+</div>
+
+</div>
+
+<div>
+  <div class="content">
+<p>Designed for a unique 4-inch mobile display, yet adaptable to larger screens.</p>
+  </div>
+ <div>
+  <img class="image-width" src="/Assets/Images/Dexa OS/8.png">
+</div>
+
+
+
+</div>
+
+
+
+<!-- Floating Scroll-to-Top Button -->
+
+
+
+
+
+
+</div>
+
+<div id="scroll-top-btn" title="Scroll to top">↑</div>
+
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll("div"); // you can change selector
+  
+  elements.forEach((el, i) => {
+    el.classList.add("fade-in-top");
+    setTimeout(() => {
+      el.classList.add("show");
+    }, i * 150); // 150ms stagger per div
+  });
+});
+
+
+document.getElementById('go-back').addEventListener('click', function (e) {
+  e.preventDefault();
+  if (window.history.length > 1) {
+    window.history.back();
+  } else {
+    // Optional: fallback to a default page if there's no history
+    window.location.href = 'index.html';
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollBtn = document.getElementById('scroll-top-btn');
+
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 200) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  });
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
+
+
+
+</script>
